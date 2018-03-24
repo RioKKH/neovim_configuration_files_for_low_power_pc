@@ -1,0 +1,142 @@
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# - Auto completion - 
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i  = 1
+hook_source = '''
+  call deoplete#enable()
+  source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+on_i = 1
+on_ft = 'go'
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_i = 1
+on_ft = ['c', 'cpp', 'cmake']
+depends = 'deoplete.nvim'
+hook_source = '''
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-4.0//lib/libclang-4.0.so.1'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+'''
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_i = 1
+on_ft = ['c', 'cpp']
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_i = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+hook_source = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+
+#[[plugins]]
+#repo = 'Shougo/neosnippet-snippets'
+#on_i = 1
+#on_ft = ['snippet']
+
+
+
+#[[plugins]]
+#repo = 'zchee/deoplete-jedi'
+#on_i = 1
+#on_ft = 'python'
+
+#[[plugins]]
+#repo = 'davidhalter/jedi-vim'
+#on_ft = 'python'
+#hook_source = '''
+#  let g:jedi#popup_select_first = 0
+#  let g:jedi#popup_on_dot = 1
+#  let g:jedi#completion_enabled = 1
+#  let g:jedi#auto_vim_configuration = 0
+#  let g:jedi#smart_auto_mappings = 0
+#'''
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
+on_source = ['deoplete.nvim']
+
+#
+# - tag file --------------------------------------------------------
+#
+[[plugins]]
+repo = 'lighttiger2505/gtags.vim'
+on_ft = ['c', 'cpp']
+hook_source = '''
+  " Options
+  let g:Gtags_Auto_Map = 0
+  let g:Gtags_OpenQuickfixWindow = 1
+
+  " Keymap
+  " Show definition of function cursor word on quickfix
+  nmap <silent> K :<C-u>exe("Gtags ".expand('<cword>'))<CR>
+  " Show reference of cursor word on quickfix
+  nmap <silent> R :<C-u>exe("Gtags -r ".expand('<cwrod>'))<CR>
+'''
+
+[[plugins]]
+repo = 'jsfaint/gen_tags.vim'
+on_ft = ['c', 'cpp']
+hook_source = '''
+  let g:gen_tags#gtags_auto_gen = 1
+  let g:gen_tags#ctags_auto_gen = 1
+'''
+
+
+#
+# - Syntax highligter -----------------------------------------------
+#
+
+# - python formatter
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+on_ft = 'python'
+
+# - Syntax files with C++11 support -
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+on_ft = ['c', 'cpp']
+
+# - Syntax highlighter for toml file -
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+# - Syntax highlighter for go languate -
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+hook_source = '''
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_field = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+'''
+
+# - Syntax highlighter for javascript -
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = 'javascript'
+
+# - 
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'
