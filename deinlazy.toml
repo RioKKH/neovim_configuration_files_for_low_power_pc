@@ -2,34 +2,34 @@
 repo = 'Shougo/context_filetype.vim'
 
 # - Auto completion - 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-on_i  = 1
-hook_source = '''
-  call deoplete#enable()
-  source ~/.config/nvim/plugins/deoplete.rc.vim
-'''
+#[[plugins]] repo = 'Shougo/deoplete.nvim'
+#depends = 'context_filetype.vim'
+#on_i  = 1
+#on_ft = ['c', 'cpp', 'sh', 'toml', 'md', 'js', 'ts']
+#hook_source = '''
+#  let g:deoplete#enable_at_startup = 1
+#  source ~/.config/nvim/plugins/deoplete.rc.vim
+#'''
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_i = 1
-on_ft = 'go'
+#[[plugins]]
+#repo = 'zchee/deoplete-go'
+#on_i = 1
+#on_ft = 'go'
 
-[[plugins]]
-repo = 'zchee/deoplete-clang'
-on_i = 1
-on_ft = ['c', 'cpp', 'cmake']
-depends = 'deoplete.nvim'
-hook_source = '''
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-4.0//lib/libclang-4.0.so.1'
-let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-'''
+#[[plugins]]
+#repo = 'zchee/deoplete-clang'
+#on_i = 1
+#on_ft = ['c', 'cpp', 'cmake']
+#depends = 'deoplete.nvim'
+#hook_source = '''
+#let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-4.0//lib/libclang-4.0.so.1'
+#let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+#'''
 
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
-on_i = 1
-on_ft = ['c', 'cpp']
+#[[plugins]]
+#repo = 'Shougo/neoinclude.vim'
+#on_i = 1
+#on_ft = ['c', 'cpp']
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
@@ -44,13 +44,6 @@ hook_source = '''
     set conceallevel=2 concealcursor=niv
   endif
 '''
-
-#[[plugins]]
-#repo = 'Shougo/neosnippet-snippets'
-#on_i = 1
-#on_ft = ['snippet']
-
-
 
 #[[plugins]]
 #repo = 'zchee/deoplete-jedi'
@@ -68,15 +61,16 @@ hook_source = '''
 #  let g:jedi#smart_auto_mappings = 0
 #'''
 
-[[plugins]]
-repo = 'ujihisa/neco-look'
-on_source = ['deoplete.nvim']
+#[[plugins]]
+#repo = 'ujihisa/neco-look'
+#on_source = ['deoplete.nvim']
 
 #
 # - tag file --------------------------------------------------------
 #
 [[plugins]]
 repo = 'lighttiger2505/gtags.vim'
+on_i = 1
 on_ft = ['c', 'cpp']
 hook_source = '''
   " Options
@@ -87,11 +81,12 @@ hook_source = '''
   " Show definition of function cursor word on quickfix
   nmap <silent> K :<C-u>exe("Gtags ".expand('<cword>'))<CR>
   " Show reference of cursor word on quickfix
-  nmap <silent> R :<C-u>exe("Gtags -r ".expand('<cwrod>'))<CR>
+  nmap <silent> L :<C-u>exe("Gtags -r ".expand('<cwrod>'))<CR>
 '''
 
 [[plugins]]
 repo = 'jsfaint/gen_tags.vim'
+on_i = 1
 on_ft = ['c', 'cpp']
 hook_source = '''
   let g:gen_tags#gtags_auto_gen = 1
@@ -137,6 +132,6 @@ repo = 'mxw/vim-jsx'
 on_ft = 'javascript'
 
 # - 
-[[plugins]]
-repo = 'Shougo/neco-vim'
-on_ft = 'vim'
+#[[plugins]]
+#repo = 'Shougo/neco-vim'
+#on_ft = 'vim'

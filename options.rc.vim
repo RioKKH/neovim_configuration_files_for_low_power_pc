@@ -18,6 +18,7 @@ syntax enable
 
 " set statusline+=%{gutentags#statusline()}
 
+set clipboard+=unnamedplus
 if has('nvim')
   set clipboard+=unnamedplus
   "if has('mouse')
@@ -26,7 +27,8 @@ if has('nvim')
 else
   set laststatus=2
   set wildmenu
-  set clipboard=unnamed,autoselect set backspace=indent,eol,start
+  set clipboard+=unnamed,autoselect
+  set backspace+=indent,eol,start
 endif
 
 nnoremap <C-]> g<C-]>
@@ -57,7 +59,7 @@ let g:loaded_spellfile_plugin    = 1
 let g:loaded_man                 = 1
 let g:loaded_matchit             = 1
 
-" let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 "----------------------------------------------
 " for Lang

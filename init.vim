@@ -23,10 +23,6 @@ if dein#load_state('/home/kakehi/.cache/dein/')
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
 
-  " test for deoplete
-  " call dein#add('Shougo/deoplete.nvim')
-  " let g:deoplete#enable_at_startup = 1
-
   " Required:
   call dein#end()
   call dein#save_state()
