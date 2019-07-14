@@ -26,10 +26,15 @@ repo = 'Shougo/context_filetype.vim'
 #let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 #'''
 
-#[[plugins]]
-#repo = 'Shougo/neoinclude.vim'
-#on_i = 1
-#on_ft = ['c', 'cpp']
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_i = 1
+on_ft = ['c', 'cpp']
+
+[[plugins]]
+repo = 'jsfaint/coc-neoinclude'
+on_i = 1
+on_ft = ['c', 'cpp']
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'

@@ -2,15 +2,15 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'neoclide/coc-neco'
-
-[[plugins]]
-repo = 'Shougo/neco-vim'
-
-[[plugins]]
 repo = 'neoclide/coc.nvim'
 build = 'coc#util#install()'
 hook_add = 'source /home/kakehi/.config/nvim/plugins/coc.rc.vim'
+
+#[[plugins]]
+#repo = 'neoclide/coc-neco'
+
+#[[plugins]]
+#repo = 'Shougo/neco-vim'
 
 [[plugins]]
  repo = 'joshdick/onedark.vim'

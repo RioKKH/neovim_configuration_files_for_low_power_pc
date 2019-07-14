@@ -59,7 +59,7 @@ let g:loaded_spellfile_plugin    = 1
 let g:loaded_man                 = 1
 let g:loaded_matchit             = 1
 
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 
 "----------------------------------------------
 " for Lang
