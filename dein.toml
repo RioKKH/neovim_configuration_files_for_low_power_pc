@@ -3,8 +3,12 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
+#build = './install.sh nightly'
 build = 'coc#util#install()'
-hook_add = 'source /home/kakehi/.config/nvim/plugins/coc.rc.vim'
+#hook_add = 'source /home/kakehi/.config/nvim/plugins/coc.rc.vim'
+
+#[[plugins]]
+#repo = 'neoclide/coc-denite'
 
 #[[plugins]]
 #repo = 'neoclide/coc-neco'

@@ -76,7 +76,7 @@ hook_source = '''
 [[plugins]]
 repo = 'lighttiger2505/gtags.vim'
 on_i = 1
-on_ft = ['c', 'cpp']
+on_ft = ['c', 'cpp', 'cuda', 'java', 'python']
 hook_source = '''
   " Options
   let g:Gtags_Auto_Map = 0
@@ -92,7 +92,7 @@ hook_source = '''
 [[plugins]]
 repo = 'jsfaint/gen_tags.vim'
 on_i = 1
-on_ft = ['c', 'cpp']
+on_ft = ['c', 'cpp', 'cuda', 'java', 'python']
 hook_source = '''
   let g:gen_tags#gtags_auto_gen = 1
   let g:gen_tags#ctags_auto_gen = 1
@@ -140,3 +140,8 @@ on_ft = 'javascript'
 #[[plugins]]
 #repo = 'Shougo/neco-vim'
 #on_ft = 'vim'
+
+[[plugins]]
+repo = 'uiiaoo/java-syntax.vim'
+on_ft = 'java'
+

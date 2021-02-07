@@ -9,6 +9,7 @@ set infercase
 set virtualedit=all
 set autoindent
 set mouse=a
+set pumblend=10
 
 " - colorscheme setting makes startup of nvim a little bit slower -
 colorscheme onedark
@@ -88,6 +89,43 @@ let b:current_after_syntax = 'python'
 
 " for C, C++
 autocmd FileType c,cpp setlocal cindent
+autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType c,cpp setlocal smarttab smartindent textwidth=80
-autocmd FileType c setlocal dictionary=/usr/local/share/nvim/runtime/syntax/c.vim
-autocmd FileType cpp setlocal dictionary=/usr/local/share/nvim/runtime/syntax/cpp.vim
+autocmd FileType c setlocal dictionary=/usr/sahre/vim/vim80/syntax/c.vim
+autocmd FileType cpp setlocal dictionary=/usr/share/vim/vim80/syntax/cpp.vim
+
+" for cuda
+autocmd BufNewFile,BufRead *.cu set filetype=cuda
+autocmd BufNewFile,BufRead *.cuh set filetype=cuda
+autocmd FileType cuda setlocal cindent
+autocmd FileType cuda setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType cuda setlocal smarttab smartindent textwidth=80
+autocmd FileType cuda setlocal dictionary=/usr/share/vim/vim80/syntax/cuda.vim
+
+" for Java
+autocmd FileType java setlocal cindent
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType c,cpp setlocal smarttab smartindent
+autocmd FileType cpp setlocal dictionary=/usr/share/vim/vim80/syntax/java.vim
+
+
+" for cafeOBJ
+autocmd BufRead,BufNewFile *.cafe setfiletype cafe
+autocmd FileType cafe highlight CafeIfThenElse ctermfg=39 guifg=#61AFEF
+autocmd FileType cafe highlight CafeReserved ctermfg=114 guifg=#98C379
+autocmd FileType cafe highlight CafeParenthesis ctermfg=170 guifg=#C678DD
+autocmd FileType cafe highlight CafeOperators ctermfg=204 guifg=#E06C75
+syntax match CafeOperators /[+-/*%&|~!@#$^_=<>,.:;]/ containedin=ALL
+"syntax match CafeIfThenElse if then else for while
+syntax keyword CafeIfThenElse if then else for while containedin=ALL
+syntax match CafeParenthesis /[(){}]/ containedin=ALL
+syntax match CafeOperators /[+-/*%&|~!@#$^_=<>,.:;]/ containedin=ALL
+syntax keyword CafeReserved pr mod op ops var vars eq eqs red open close eof containedin=ALL
+autocmd FileType cafe syntax keyword CafeIfThenElse if then else for while containedin=ALL
+autocmd FileType cafe syntax keyword CafeReserved pr mod op ops var vars eq eqs red open close eof containedin=ALL
+autocmd FileType cafe syntax match CafeParenthesis /[(){}]/ containedin=ALL
+autocmd FileType cafe syntax match CafeOperators /[+-/*%&|~!@#$^_=<>,.:;]/ containedin=ALL
+"autocmd FileType cafe setlocal commentstring=--\ %s
+autocmd FileType cafe setlocal cindent
+autocmd FileType cafe setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType cafe setlocal smarttab smartindent

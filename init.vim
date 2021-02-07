@@ -1,3 +1,5 @@
+if !exists('g:vscode')
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -12,7 +14,7 @@ if dein#load_state('/home/kakehi/.cache/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/kakehi/.cache/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/kakehi/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#load_toml('~/.config/nvim/dein.toml', {'lazy' : 0})
@@ -28,6 +30,11 @@ if dein#load_state('/home/kakehi/.cache/dein/')
   call dein#save_state()
 endif
 
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
@@ -36,3 +43,5 @@ runtime! options.rc.vim
 runtime! keymap.rc.vim
 runtime! personal.rc.vim
 runtime! private.rc.vim
+
+endif
