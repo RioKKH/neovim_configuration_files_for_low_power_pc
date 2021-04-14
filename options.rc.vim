@@ -9,6 +9,7 @@ set infercase
 set virtualedit=all
 set autoindent
 set mouse=a
+set pumblend=30
 
 " - colorscheme setting makes startup of nvim a little bit slower -
 colorscheme onedark
@@ -18,7 +19,7 @@ syntax enable
 
 " set statusline+=%{gutentags#statusline()}
 
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 if has('nvim')
   set clipboard+=unnamedplus
   "if has('mouse')
@@ -58,12 +59,22 @@ let g:loaded_tutor_mode_plugin   = 1
 let g:loaded_spellfile_plugin    = 1
 let g:loaded_man                 = 1
 let g:loaded_matchit             = 1
+let g:python_host_prog = expand('/usr/bin/python2.7')
+let g:python3_host_prog = expand('~/.pyenv/versions/a3.8.9/bin/python3.8')
+"let g:python3_host_prog = expand('~/.pyenv/versions/anaconda3-2019.03/bin/python3.7')
 
 "let g:deoplete#enable_at_startup = 1
 
 "----------------------------------------------
 " for Lang
 "----------------------------------------------
+" for C, C++
+autocmd FileType c,cpp setlocal cindent
+autocmd FileType c,cpp setlocal smarttab smartindent textwidth=80
+autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+autocmd FileType c setlocal dictionary=/usr/local/share/nvim/runtime/syntax/c.vim
+autocmd FileType cpp setlocal dictionary=/usr/local/share/nvim/runtime/syntax/cpp.vim
+
 " for vim script
 autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType vim setlocal dictionary=/usr/local/share/nvim/runtime/syntax/vim/generated.vim
@@ -86,8 +97,8 @@ highlight link pythonDelimiter Special
 
 let b:current_after_syntax = 'python'
 
-" for C, C++
-autocmd FileType c,cpp setlocal cindent
-autocmd FileType c,cpp setlocal smarttab smartindent textwidth=80
-autocmd FileType c setlocal dictionary=/usr/local/share/nvim/runtime/syntax/c.vim
-autocmd FileType cpp setlocal dictionary=/usr/local/share/nvim/runtime/syntax/cpp.vim
+" for R
+autocmd FileType r setlocal cindent
+autocmd FileType r setlocal smarttab smartindent textwidth=80
+autocmd FileType r setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
