@@ -90,7 +90,7 @@ let b:current_after_syntax = 'python'
 " for C, C++
 autocmd FileType c,cpp setlocal cindent
 autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType c,cpp setlocal smarttab smartindent textwidth=80
+autocmd FileType c,cpp setlocal smarttab smartindent textwidth=130
 autocmd FileType c setlocal dictionary=/usr/sahre/vim/vim80/syntax/c.vim
 autocmd FileType cpp setlocal dictionary=/usr/share/vim/vim80/syntax/cpp.vim
 
@@ -99,14 +99,14 @@ autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
 autocmd FileType cuda setlocal cindent
 autocmd FileType cuda setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType cuda setlocal smarttab smartindent textwidth=80
+autocmd FileType cuda setlocal smarttab smartindent textwidth=130
 autocmd FileType cuda setlocal dictionary=/usr/share/vim/vim80/syntax/cuda.vim
 
 " for Java
 autocmd FileType java setlocal cindent
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType c,cpp setlocal smarttab smartindent
-autocmd FileType cpp setlocal dictionary=/usr/share/vim/vim80/syntax/java.vim
+autocmd FileType java setlocal smarttab smartindent
+autocmd FileType java setlocal dictionary=/usr/share/vim/vim80/syntax/java.vim
 
 
 " for cafeOBJ
@@ -129,3 +129,7 @@ autocmd FileType cafe syntax match CafeOperators /[+-/*%&|~!@#$^_=<>,.:;]/ conta
 autocmd FileType cafe setlocal cindent
 autocmd FileType cafe setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType cafe setlocal smarttab smartindent
+
+
+" for all of file types
+autocmd FileType * setlocal formatoptions-=ro
