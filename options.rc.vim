@@ -64,6 +64,24 @@ let g:python3_host_prog = expand('~/.pyenv/versions/a3.8.9/bin/python3.8')
 "let g:python3_host_prog = expand('~/.pyenv/versions/anaconda3-2019.03/bin/python3.7')
 
 "let g:deoplete#enable_at_startup = 1
+"
+" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'onedark'
+
+" gen_tags.vim
+let g:gen_tags#gtags_auto_get = 1
+let g:gen_tags#ctags_auto_get = 1
+
+" quickrun
+let g:quickrun_config = get(g:, 'quickrun_config', {})
+let g:quickrun_config._ = {
+      \ 'outputter/buffer/opener': 'new',
+      \ 'outputter/buffer/into': 1,
+      \ 'outputter/buffer/close_on_empty': 1,
+      \ }
 
 "----------------------------------------------
 " for Lang

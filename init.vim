@@ -1,38 +1,24 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/home/kakehi/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/home/kakehi/.cache/dein/')
-  call dein#begin('/home/kakehi/.cache/dein/')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('/home/kakehi/.cache/dein//repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here:
-  call dein#load_toml('~/.config/nvim/dein.toml', {'lazy' : 0})
-  call dein#load_toml('~/.config/nvim/deinlazy.toml', {'lazy' : 1})
-  " call dein#load_toml('~/.config/nvim/deinft.toml')
-  
-
-  " You can specify revision/branch/tag.
-  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes', {'airline_theme': 'onedark'}
+Plug 'shougo/vimproc.vim', {'do': 'make'}
+Plug 'shougo/neosnippet.vim' 
+Plug 'shougo/neosnippet-snippets'
+Plug 'shougo/neoinclude.vim'
+Plug 'jsfaint/coc-neoinclude'
+Plug 'jsfaint/gen_tags.vim', {'for': ['c', 'cpp', 'cuda']}
+Plug 'thinca/vim-quickrun'
+Plug 'vim-jp/cpp-vim', {'for': ['c', 'cpp', 'cuda']} 
+Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'uiiaoo/java-syntax.vim', {'for': 'java'}
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+call plug#end()
 
 runtime! options.rc.vim
 runtime! keymap.rc.vim
 runtime! personal.rc.vim
 runtime! private.rc.vim
+
