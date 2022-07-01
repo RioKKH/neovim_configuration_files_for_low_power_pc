@@ -1,0 +1,21 @@
+{
+	"jedi" : {
+		"enable": true,
+		"startupMessage" : false,
+		"markupKindPreferred": "plaintext",
+		"executable.command": "jedi-language-server",
+		"jediSettings.autoImportModules": [
+			"numpy",
+			"pandas"
+		],
+		"jediSettings.caseInsensitiveCompletion": true,
+		"workspace.symbols.ignoreFolders": [
+			".nox",
+			".tox",
+			".venv",
+			"__pycache__",
+			"venv"
+		]
+	}
+}
+
