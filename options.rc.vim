@@ -93,10 +93,12 @@ autocmd FileType c,cpp,cuda setlocal cindent
 autocmd FileType c,cpp,cuda setlocal smarttab smartindent textwidth=100
 autocmd FileType c,cpp,cuda setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 "autocmd FileType c,cpp,cuda setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-autocmd FileType c setlocal dictionary=/snap/nvim/1722/usr/share/nvim/runtime/syntax/c.vim
-autocmd FileType cpp setlocal dictionary=/snap/nvim/1722/usr/share/nvim/runtime/syntax/cpp.vim
-autocmd FileType cuda setlocal dictionary=/snap/nvim/1722/usr/share/nvim/runtime/syntax/cuda.vim
-"autocmd FileType c setlocal dictionary=/usr/local/share/nvim/runtime/syntax/c.vim
+autocmd FileType c setlocal dictionary=/home/kakehi/bin/nvim0.9.2/usr/share/nvim/runtime/syntax/c.vim
+autocmd FileType cpp setlocal dictionary=/home/kakehi/bin/nvim0.9.2/usr/share/nvim/runtime/syntax/cpp.vim
+autocmd FileType cuda setlocal dictionary=/home/kakehi/bin/nvim0.9.2/usr/share/nvim/runtime/syntax/cuda.vim
+"autocmd FileType c setlocal dictionary=/snap/nvim/1722/usr/share/nvim/runtime/syntax/c.vim
+"autocmd FileType cpp setlocal dictionary=/snap/nvim/1722/usr/share/nvim/runtime/syntax/cpp.vim
+""autocmd FileType c setlocal dictionary=/usr/local/share/nvim/runtime/syntax/c.vim
 "autocmd FileType cpp setlocal dictionary=/usr/local/share/nvim/runtime/syntax/cpp.vim
 "autocmd FileType cuda setlocal dictionary=/usr/local/share/nvim/runtime/syntax/cpp.vim
 " C++ syntax highlight
@@ -109,11 +111,20 @@ autocmd FileType cuda setlocal dictionary=/snap/nvim/1722/usr/share/nvim/runtime
 
 " for vim script
 autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType vim setlocal dictionary=/usr/local/share/nvim/runtime/syntax/vim/generated.vim
+"autocmd FileType vim setlocal dictionary=/usr/local/share/nvim/runtime/syntax/vim/generated.vim
+autocmd FileType vim setlocal dictionary=/home/kakehi/bin/nvim0.9.2/usr/share/nvim/runtime/syntax/vim.vim
 
 " for shell script
-autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
-autocmd FileType sh setlocal dictionary=/usr/local/share/nvim/runtime/syntax/sh.vim
+autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType sh setlocal smarttab nosmartindent colorcolumn=81
+autocmd FileType sh setlocal dictionary=/home/kakehi/bin/nvim0.9.2/usr/share/nvim/runtime/syntax/sh.vim
+"autocmd FileType sh setlocal dictionary=/usr/local/share/nvim/runtime/syntax/sh.vim
+if executable('shfmt')
+  let &l:formatprg='shfmt'
+  let g:shfmt_extra_args = '-i 2 -ci -bn -sr -fn'
+  let g:shfmt_fmt_on_save = 1
+endif
+
 
 " for python
 autocmd FileType python setlocal cindent
@@ -121,7 +132,8 @@ autocmd FileType python setlocal cinwords=if,else,elif,for,try,except,finally,de
 autocmd FileType python setlocal tabstop=8 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType python setlocal smarttab nosmartindent colorcolumn=81
 "autocmd FileType python setlocal smarttab nosmartindent textwidth=80 colorcolumn=81
-autocmd FileType python setlocal dictionary=/usr/local/share/nvim/runtime/syntax/python.vim
+"autocmd FileType python setlocal dictionary=/usr/local/share/nvim/runtime/syntax/python.vim
+autocmd FileType python setlocal dictionary=/home/kakehi/bin/nvim0.9.2/usr/share/nvim/runtime/syntax/python.vim
 syntax match pythonOperator "\(+\|=\|-\|^\|*\)"
 syntax match pythonDelimiter "\(,\|.\|:\)"
 syntax keyword pythonSpecialWord self

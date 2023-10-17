@@ -19,6 +19,7 @@ Plug 'uiiaoo/java-syntax.vim', {'for': 'java'}
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
+Plug 'z0mbix/vim-shfmt', {'for': 'sh'}
 call plug#end()
 
 runtime! options.rc.vim

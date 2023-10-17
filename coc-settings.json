@@ -17,18 +17,25 @@
 			"venv"
 		]
 	},
-	// "clangd.path": "/usr/bin/clangd-14",
-	"languageserver": {
-		"ccls": {
-			"command": "ccls",
-			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-			"initializationOptions": {
-				"cache": {
-					"directory": "/tmp/ccls"
-				}
-			}
-		}
+  "clangd.path": "/usr/bin/clangd",
+	"diagnostic-languageserver.filetypes": {
+		"sh": "shellcheck"
 	}
+// 	},
+// 	"diagnostic-languageserver.formatFiletypes":{
+// 		"sh": "shfmt"
+// 	}
+// 	"languageserver": {
+// 		"ccls": {
+// 			"command": "ccls",
+// 			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+// 			"rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+// 			"initializationOptions": {
+// 				"cache": {
+// 					"directory": "/tmp/ccls"
+// 				}
+// 			}
+// 		}
+// 	}
 }
 

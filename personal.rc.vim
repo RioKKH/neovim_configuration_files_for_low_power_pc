@@ -11,7 +11,7 @@ function! ShowLineCount()
   echo "This file has " . l:line_count . " lines."
 endfunction
 
-" MyFunction("a", "b")
+" function, if-then-else
 function! MyFunction(arg1, arg2)
   echo a:arg1 . " " . a:arg2
   if a:arg1 == "a"
